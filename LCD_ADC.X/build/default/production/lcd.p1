@@ -1,0 +1,1474 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"20 lcd.c
+[v _pause `(v ~T0 @X0 0 ef1`us ]
+[; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
+[; ;htc.h: 28: extern double __fpnormalize(double);
+[; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
+"19 C:\Program Files (x86)\Microchip\xc8\v1.35\include\legacy\pic16f887_legacy.h
+[v _INDF `Vuc ~T0 @X0 1 e@0 ]
+[; ;pic16f887_legacy.h: 19: volatile unsigned char INDF @ 0x000;
+"20
+[v _TMR0 `Vuc ~T0 @X0 1 e@1 ]
+[; ;pic16f887_legacy.h: 20: volatile unsigned char TMR0 @ 0x001;
+"21
+[v _PCL `Vuc ~T0 @X0 1 e@2 ]
+[; ;pic16f887_legacy.h: 21: volatile unsigned char PCL @ 0x002;
+"22
+[v _STATUS `Vuc ~T0 @X0 1 e@3 ]
+[; ;pic16f887_legacy.h: 22: volatile unsigned char STATUS @ 0x003;
+"23
+[v _FSR `Vuc ~T0 @X0 1 e@4 ]
+[; ;pic16f887_legacy.h: 23: volatile unsigned char FSR @ 0x004;
+"24
+[v _PORTA `Vuc ~T0 @X0 1 e@5 ]
+[; ;pic16f887_legacy.h: 24: volatile unsigned char PORTA @ 0x005;
+"25
+[v _PORTB `Vuc ~T0 @X0 1 e@6 ]
+[; ;pic16f887_legacy.h: 25: volatile unsigned char PORTB @ 0x006;
+"26
+[v _PORTC `Vuc ~T0 @X0 1 e@7 ]
+[; ;pic16f887_legacy.h: 26: volatile unsigned char PORTC @ 0x007;
+"28
+[v _PORTD `Vuc ~T0 @X0 1 e@8 ]
+[; ;pic16f887_legacy.h: 28: volatile unsigned char PORTD @ 0x008;
+"30
+[v _PORTE `Vuc ~T0 @X0 1 e@9 ]
+[; ;pic16f887_legacy.h: 30: volatile unsigned char PORTE @ 0x009;
+"31
+[v _PCLATH `Vuc ~T0 @X0 1 e@10 ]
+[; ;pic16f887_legacy.h: 31: volatile unsigned char PCLATH @ 0x00A;
+"32
+[v _INTCON `Vuc ~T0 @X0 1 e@11 ]
+[; ;pic16f887_legacy.h: 32: volatile unsigned char INTCON @ 0x00B;
+"33
+[v _PIR1 `Vuc ~T0 @X0 1 e@12 ]
+[; ;pic16f887_legacy.h: 33: volatile unsigned char PIR1 @ 0x00C;
+"34
+[v _PIR2 `Vuc ~T0 @X0 1 e@13 ]
+[; ;pic16f887_legacy.h: 34: volatile unsigned char PIR2 @ 0x00D;
+"35
+[v _TMR1L `Vuc ~T0 @X0 1 e@14 ]
+[; ;pic16f887_legacy.h: 35: volatile unsigned char TMR1L @ 0x00E;
+"36
+[v _TMR1H `Vuc ~T0 @X0 1 e@15 ]
+[; ;pic16f887_legacy.h: 36: volatile unsigned char TMR1H @ 0x00F;
+"37
+[v _T1CON `Vuc ~T0 @X0 1 e@16 ]
+[; ;pic16f887_legacy.h: 37: volatile unsigned char T1CON @ 0x010;
+"38
+[v _TMR2 `Vuc ~T0 @X0 1 e@17 ]
+[; ;pic16f887_legacy.h: 38: volatile unsigned char TMR2 @ 0x011;
+"39
+[v _T2CON `Vuc ~T0 @X0 1 e@18 ]
+[; ;pic16f887_legacy.h: 39: volatile unsigned char T2CON @ 0x012;
+"40
+[v _SSPBUF `Vuc ~T0 @X0 1 e@19 ]
+[; ;pic16f887_legacy.h: 40: volatile unsigned char SSPBUF @ 0x013;
+"41
+[v _SSPCON `Vuc ~T0 @X0 1 e@20 ]
+[; ;pic16f887_legacy.h: 41: volatile unsigned char SSPCON @ 0x014;
+"42
+[v _CCPR1L `Vuc ~T0 @X0 1 e@21 ]
+[; ;pic16f887_legacy.h: 42: volatile unsigned char CCPR1L @ 0x015;
+"43
+[v _CCPR1H `Vuc ~T0 @X0 1 e@22 ]
+[; ;pic16f887_legacy.h: 43: volatile unsigned char CCPR1H @ 0x016;
+"44
+[v _CCP1CON `Vuc ~T0 @X0 1 e@23 ]
+[; ;pic16f887_legacy.h: 44: volatile unsigned char CCP1CON @ 0x017;
+"45
+[v _RCSTA `Vuc ~T0 @X0 1 e@24 ]
+[; ;pic16f887_legacy.h: 45: volatile unsigned char RCSTA @ 0x018;
+"46
+[v _TXREG `Vuc ~T0 @X0 1 e@25 ]
+[; ;pic16f887_legacy.h: 46: volatile unsigned char TXREG @ 0x019;
+"47
+[v _RCREG `Vuc ~T0 @X0 1 e@26 ]
+[; ;pic16f887_legacy.h: 47: volatile unsigned char RCREG @ 0x01A;
+"48
+[v _CCPR2L `Vuc ~T0 @X0 1 e@27 ]
+[; ;pic16f887_legacy.h: 48: volatile unsigned char CCPR2L @ 0x01B;
+"49
+[v _CCPR2H `Vuc ~T0 @X0 1 e@28 ]
+[; ;pic16f887_legacy.h: 49: volatile unsigned char CCPR2H @ 0x01C;
+"50
+[v _CCP2CON `Vuc ~T0 @X0 1 e@29 ]
+[; ;pic16f887_legacy.h: 50: volatile unsigned char CCP2CON @ 0x01D;
+"51
+[v _ADRESH `Vuc ~T0 @X0 1 e@30 ]
+[; ;pic16f887_legacy.h: 51: volatile unsigned char ADRESH @ 0x01E;
+"52
+[v _ADCON0 `Vuc ~T0 @X0 1 e@31 ]
+[; ;pic16f887_legacy.h: 52: volatile unsigned char ADCON0 @ 0x01F;
+"53
+[v _OPTION `Vuc ~T0 @X0 1 e@129 ]
+[; ;pic16f887_legacy.h: 53: volatile unsigned char OPTION @ 0x081;
+"54
+[v _TRISA `Vuc ~T0 @X0 1 e@133 ]
+[; ;pic16f887_legacy.h: 54: volatile unsigned char TRISA @ 0x085;
+"55
+[v _TRISB `Vuc ~T0 @X0 1 e@134 ]
+[; ;pic16f887_legacy.h: 55: volatile unsigned char TRISB @ 0x086;
+"56
+[v _TRISC `Vuc ~T0 @X0 1 e@135 ]
+[; ;pic16f887_legacy.h: 56: volatile unsigned char TRISC @ 0x087;
+"58
+[v _TRISD `Vuc ~T0 @X0 1 e@136 ]
+[; ;pic16f887_legacy.h: 58: volatile unsigned char TRISD @ 0x088;
+"60
+[v _TRISE `Vuc ~T0 @X0 1 e@137 ]
+[; ;pic16f887_legacy.h: 60: volatile unsigned char TRISE @ 0x089;
+"61
+[v _PIE1 `Vuc ~T0 @X0 1 e@140 ]
+[; ;pic16f887_legacy.h: 61: volatile unsigned char PIE1 @ 0x08C;
+"62
+[v _PIE2 `Vuc ~T0 @X0 1 e@141 ]
+[; ;pic16f887_legacy.h: 62: volatile unsigned char PIE2 @ 0x08D;
+"63
+[v _PCON `Vuc ~T0 @X0 1 e@142 ]
+[; ;pic16f887_legacy.h: 63: volatile unsigned char PCON @ 0x08E;
+"64
+[v _OSCCON `Vuc ~T0 @X0 1 e@143 ]
+[; ;pic16f887_legacy.h: 64: volatile unsigned char OSCCON @ 0x08F;
+"65
+[v _OSCTUNE `Vuc ~T0 @X0 1 e@144 ]
+[; ;pic16f887_legacy.h: 65: volatile unsigned char OSCTUNE @ 0x090;
+"66
+[v _SSPCON2 `Vuc ~T0 @X0 1 e@145 ]
+[; ;pic16f887_legacy.h: 66: volatile unsigned char SSPCON2 @ 0x091;
+"67
+[v _PR2 `Vuc ~T0 @X0 1 e@146 ]
+[; ;pic16f887_legacy.h: 67: volatile unsigned char PR2 @ 0x092;
+"68
+[v _SSPADD `Vuc ~T0 @X0 1 e@147 ]
+[; ;pic16f887_legacy.h: 68: volatile unsigned char SSPADD @ 0x093;
+"69
+[v _SSPMSK `Vuc ~T0 @X0 1 e@147 ]
+[; ;pic16f887_legacy.h: 69: volatile unsigned char SSPMSK @ 0x093;
+"70
+[v _SSPSTAT `Vuc ~T0 @X0 1 e@148 ]
+[; ;pic16f887_legacy.h: 70: volatile unsigned char SSPSTAT @ 0x094;
+"71
+[v _WPUB `Vuc ~T0 @X0 1 e@149 ]
+[; ;pic16f887_legacy.h: 71: volatile unsigned char WPUB @ 0x095;
+"72
+[v _IOCB `Vuc ~T0 @X0 1 e@150 ]
+[; ;pic16f887_legacy.h: 72: volatile unsigned char IOCB @ 0x096;
+"73
+[v _VRCON `Vuc ~T0 @X0 1 e@151 ]
+[; ;pic16f887_legacy.h: 73: volatile unsigned char VRCON @ 0x097;
+"74
+[v _TXSTA `Vuc ~T0 @X0 1 e@152 ]
+[; ;pic16f887_legacy.h: 74: volatile unsigned char TXSTA @ 0x098;
+"75
+[v _SPBRG `Vuc ~T0 @X0 1 e@153 ]
+[; ;pic16f887_legacy.h: 75: volatile unsigned char SPBRG @ 0x099;
+"76
+[v _SPBRGH `Vuc ~T0 @X0 1 e@154 ]
+[; ;pic16f887_legacy.h: 76: volatile unsigned char SPBRGH @ 0x09A;
+"77
+[v _PWM1CON `Vuc ~T0 @X0 1 e@155 ]
+[; ;pic16f887_legacy.h: 77: volatile unsigned char PWM1CON @ 0x09B;
+"78
+[v _ECCPAS `Vuc ~T0 @X0 1 e@156 ]
+[; ;pic16f887_legacy.h: 78: volatile unsigned char ECCPAS @ 0x09C;
+"79
+[v _PSTRCON `Vuc ~T0 @X0 1 e@157 ]
+[; ;pic16f887_legacy.h: 79: volatile unsigned char PSTRCON @ 0x09D;
+"80
+[v _ADRESL `Vuc ~T0 @X0 1 e@158 ]
+[; ;pic16f887_legacy.h: 80: volatile unsigned char ADRESL @ 0x09E;
+"81
+[v _ADCON1 `Vuc ~T0 @X0 1 e@159 ]
+[; ;pic16f887_legacy.h: 81: volatile unsigned char ADCON1 @ 0x09F;
+"82
+[v _WDTCON `Vuc ~T0 @X0 1 e@261 ]
+[; ;pic16f887_legacy.h: 82: volatile unsigned char WDTCON @ 0x105;
+"83
+[v _CM1CON0 `Vuc ~T0 @X0 1 e@263 ]
+[; ;pic16f887_legacy.h: 83: volatile unsigned char CM1CON0 @ 0x107;
+"84
+[v _CM2CON0 `Vuc ~T0 @X0 1 e@264 ]
+[; ;pic16f887_legacy.h: 84: volatile unsigned char CM2CON0 @ 0x108;
+"85
+[v _CM2CON1 `Vuc ~T0 @X0 1 e@265 ]
+[; ;pic16f887_legacy.h: 85: volatile unsigned char CM2CON1 @ 0x109;
+"86
+[v _EEDAT `Vuc ~T0 @X0 1 e@268 ]
+[; ;pic16f887_legacy.h: 86: volatile unsigned char EEDAT @ 0x10C;
+"88
+[v _EEDATA `Vuc ~T0 @X0 1 e@268 ]
+[; ;pic16f887_legacy.h: 88: volatile unsigned char EEDATA @ 0x10C;
+"89
+[v _EEADR `Vuc ~T0 @X0 1 e@269 ]
+[; ;pic16f887_legacy.h: 89: volatile unsigned char EEADR @ 0x10D;
+"91
+[v _EEADRL `Vuc ~T0 @X0 1 e@269 ]
+[; ;pic16f887_legacy.h: 91: volatile unsigned char EEADRL @ 0x10D;
+"92
+[v _EEDATH `Vuc ~T0 @X0 1 e@270 ]
+[; ;pic16f887_legacy.h: 92: volatile unsigned char EEDATH @ 0x10E;
+"93
+[v _EEADRH `Vuc ~T0 @X0 1 e@271 ]
+[; ;pic16f887_legacy.h: 93: volatile unsigned char EEADRH @ 0x10F;
+"94
+[v _SRCON `Vuc ~T0 @X0 1 e@389 ]
+[; ;pic16f887_legacy.h: 94: volatile unsigned char SRCON @ 0x185;
+"95
+[v _BAUDCTL `Vuc ~T0 @X0 1 e@391 ]
+[; ;pic16f887_legacy.h: 95: volatile unsigned char BAUDCTL @ 0x187;
+"96
+[v _ANSEL `Vuc ~T0 @X0 1 e@392 ]
+[; ;pic16f887_legacy.h: 96: volatile unsigned char ANSEL @ 0x188;
+"97
+[v _ANSELH `Vuc ~T0 @X0 1 e@393 ]
+[; ;pic16f887_legacy.h: 97: volatile unsigned char ANSELH @ 0x189;
+"98
+[v _EECON1 `Vuc ~T0 @X0 1 e@396 ]
+[; ;pic16f887_legacy.h: 98: volatile unsigned char EECON1 @ 0x18C;
+"99
+[v _EECON2 `Vuc ~T0 @X0 1 e@397 ]
+[; ;pic16f887_legacy.h: 99: volatile unsigned char EECON2 @ 0x18D;
+"103
+[v _CARRY `Vb ~T0 @X0 1 e@24 ]
+[; ;pic16f887_legacy.h: 103: volatile bit CARRY @ ((unsigned)&STATUS*8)+0;
+"104
+[v _DC `Vb ~T0 @X0 1 e@25 ]
+[; ;pic16f887_legacy.h: 104: volatile bit DC @ ((unsigned)&STATUS*8)+1;
+"105
+[v _ZERO `Vb ~T0 @X0 1 e@26 ]
+[; ;pic16f887_legacy.h: 105: volatile bit ZERO @ ((unsigned)&STATUS*8)+2;
+"106
+[v _PD `Vb ~T0 @X0 1 e@27 ]
+[; ;pic16f887_legacy.h: 106: volatile bit PD @ ((unsigned)&STATUS*8)+3;
+"107
+[v _TO `Vb ~T0 @X0 1 e@28 ]
+[; ;pic16f887_legacy.h: 107: volatile bit TO @ ((unsigned)&STATUS*8)+4;
+"108
+[v _RP0 `Vb ~T0 @X0 1 e@29 ]
+[; ;pic16f887_legacy.h: 108: volatile bit RP0 @ ((unsigned)&STATUS*8)+5;
+"109
+[v _RP1 `Vb ~T0 @X0 1 e@30 ]
+[; ;pic16f887_legacy.h: 109: volatile bit RP1 @ ((unsigned)&STATUS*8)+6;
+"110
+[v _IRP `Vb ~T0 @X0 1 e@31 ]
+[; ;pic16f887_legacy.h: 110: volatile bit IRP @ ((unsigned)&STATUS*8)+7;
+"113
+[v _RA0 `Vb ~T0 @X0 1 e@40 ]
+[; ;pic16f887_legacy.h: 113: volatile bit RA0 @ ((unsigned)&PORTA*8)+0;
+"114
+[v _RA1 `Vb ~T0 @X0 1 e@41 ]
+[; ;pic16f887_legacy.h: 114: volatile bit RA1 @ ((unsigned)&PORTA*8)+1;
+"115
+[v _RA2 `Vb ~T0 @X0 1 e@42 ]
+[; ;pic16f887_legacy.h: 115: volatile bit RA2 @ ((unsigned)&PORTA*8)+2;
+"116
+[v _RA3 `Vb ~T0 @X0 1 e@43 ]
+[; ;pic16f887_legacy.h: 116: volatile bit RA3 @ ((unsigned)&PORTA*8)+3;
+"117
+[v _RA4 `Vb ~T0 @X0 1 e@44 ]
+[; ;pic16f887_legacy.h: 117: volatile bit RA4 @ ((unsigned)&PORTA*8)+4;
+"118
+[v _RA5 `Vb ~T0 @X0 1 e@45 ]
+[; ;pic16f887_legacy.h: 118: volatile bit RA5 @ ((unsigned)&PORTA*8)+5;
+"119
+[v _RA6 `Vb ~T0 @X0 1 e@46 ]
+[; ;pic16f887_legacy.h: 119: volatile bit RA6 @ ((unsigned)&PORTA*8)+6;
+"120
+[v _RA7 `Vb ~T0 @X0 1 e@47 ]
+[; ;pic16f887_legacy.h: 120: volatile bit RA7 @ ((unsigned)&PORTA*8)+7;
+"123
+[v _RB0 `Vb ~T0 @X0 1 e@48 ]
+[; ;pic16f887_legacy.h: 123: volatile bit RB0 @ ((unsigned)&PORTB*8)+0;
+"124
+[v _RB1 `Vb ~T0 @X0 1 e@49 ]
+[; ;pic16f887_legacy.h: 124: volatile bit RB1 @ ((unsigned)&PORTB*8)+1;
+"125
+[v _RB2 `Vb ~T0 @X0 1 e@50 ]
+[; ;pic16f887_legacy.h: 125: volatile bit RB2 @ ((unsigned)&PORTB*8)+2;
+"126
+[v _RB3 `Vb ~T0 @X0 1 e@51 ]
+[; ;pic16f887_legacy.h: 126: volatile bit RB3 @ ((unsigned)&PORTB*8)+3;
+"127
+[v _RB4 `Vb ~T0 @X0 1 e@52 ]
+[; ;pic16f887_legacy.h: 127: volatile bit RB4 @ ((unsigned)&PORTB*8)+4;
+"128
+[v _RB5 `Vb ~T0 @X0 1 e@53 ]
+[; ;pic16f887_legacy.h: 128: volatile bit RB5 @ ((unsigned)&PORTB*8)+5;
+"129
+[v _RB6 `Vb ~T0 @X0 1 e@54 ]
+[; ;pic16f887_legacy.h: 129: volatile bit RB6 @ ((unsigned)&PORTB*8)+6;
+"130
+[v _RB7 `Vb ~T0 @X0 1 e@55 ]
+[; ;pic16f887_legacy.h: 130: volatile bit RB7 @ ((unsigned)&PORTB*8)+7;
+"133
+[v _RC0 `Vb ~T0 @X0 1 e@56 ]
+[; ;pic16f887_legacy.h: 133: volatile bit RC0 @ ((unsigned)&PORTC*8)+0;
+"134
+[v _RC1 `Vb ~T0 @X0 1 e@57 ]
+[; ;pic16f887_legacy.h: 134: volatile bit RC1 @ ((unsigned)&PORTC*8)+1;
+"135
+[v _RC2 `Vb ~T0 @X0 1 e@58 ]
+[; ;pic16f887_legacy.h: 135: volatile bit RC2 @ ((unsigned)&PORTC*8)+2;
+"136
+[v _RC3 `Vb ~T0 @X0 1 e@59 ]
+[; ;pic16f887_legacy.h: 136: volatile bit RC3 @ ((unsigned)&PORTC*8)+3;
+"137
+[v _RC4 `Vb ~T0 @X0 1 e@60 ]
+[; ;pic16f887_legacy.h: 137: volatile bit RC4 @ ((unsigned)&PORTC*8)+4;
+"138
+[v _RC5 `Vb ~T0 @X0 1 e@61 ]
+[; ;pic16f887_legacy.h: 138: volatile bit RC5 @ ((unsigned)&PORTC*8)+5;
+"139
+[v _RC6 `Vb ~T0 @X0 1 e@62 ]
+[; ;pic16f887_legacy.h: 139: volatile bit RC6 @ ((unsigned)&PORTC*8)+6;
+"140
+[v _RC7 `Vb ~T0 @X0 1 e@63 ]
+[; ;pic16f887_legacy.h: 140: volatile bit RC7 @ ((unsigned)&PORTC*8)+7;
+"144
+[v _RD0 `Vb ~T0 @X0 1 e@64 ]
+[; ;pic16f887_legacy.h: 144: volatile bit RD0 @ ((unsigned)&PORTD*8)+0;
+"145
+[v _RD1 `Vb ~T0 @X0 1 e@65 ]
+[; ;pic16f887_legacy.h: 145: volatile bit RD1 @ ((unsigned)&PORTD*8)+1;
+"146
+[v _RD2 `Vb ~T0 @X0 1 e@66 ]
+[; ;pic16f887_legacy.h: 146: volatile bit RD2 @ ((unsigned)&PORTD*8)+2;
+"147
+[v _RD3 `Vb ~T0 @X0 1 e@67 ]
+[; ;pic16f887_legacy.h: 147: volatile bit RD3 @ ((unsigned)&PORTD*8)+3;
+"148
+[v _RD4 `Vb ~T0 @X0 1 e@68 ]
+[; ;pic16f887_legacy.h: 148: volatile bit RD4 @ ((unsigned)&PORTD*8)+4;
+"149
+[v _RD5 `Vb ~T0 @X0 1 e@69 ]
+[; ;pic16f887_legacy.h: 149: volatile bit RD5 @ ((unsigned)&PORTD*8)+5;
+"150
+[v _RD6 `Vb ~T0 @X0 1 e@70 ]
+[; ;pic16f887_legacy.h: 150: volatile bit RD6 @ ((unsigned)&PORTD*8)+6;
+"151
+[v _RD7 `Vb ~T0 @X0 1 e@71 ]
+[; ;pic16f887_legacy.h: 151: volatile bit RD7 @ ((unsigned)&PORTD*8)+7;
+"154
+[v _RE0 `Vb ~T0 @X0 1 e@72 ]
+[; ;pic16f887_legacy.h: 154: volatile bit RE0 @ ((unsigned)&PORTE*8)+0;
+"155
+[v _RE1 `Vb ~T0 @X0 1 e@73 ]
+[; ;pic16f887_legacy.h: 155: volatile bit RE1 @ ((unsigned)&PORTE*8)+1;
+"156
+[v _RE2 `Vb ~T0 @X0 1 e@74 ]
+[; ;pic16f887_legacy.h: 156: volatile bit RE2 @ ((unsigned)&PORTE*8)+2;
+"158
+[v _RE3 `Vb ~T0 @X0 1 e@75 ]
+[; ;pic16f887_legacy.h: 158: volatile bit RE3 @ ((unsigned)&PORTE*8)+3;
+"161
+[v _RBIF `Vb ~T0 @X0 1 e@88 ]
+[; ;pic16f887_legacy.h: 161: volatile bit RBIF @ ((unsigned)&INTCON*8)+0;
+"163
+[v _RABIF `Vb ~T0 @X0 1 e@88 ]
+[; ;pic16f887_legacy.h: 163: volatile bit RABIF @ ((unsigned)&INTCON*8)+0;
+"164
+[v _INTF `Vb ~T0 @X0 1 e@89 ]
+[; ;pic16f887_legacy.h: 164: volatile bit INTF @ ((unsigned)&INTCON*8)+1;
+"165
+[v _T0IF `Vb ~T0 @X0 1 e@90 ]
+[; ;pic16f887_legacy.h: 165: volatile bit T0IF @ ((unsigned)&INTCON*8)+2;
+"166
+[v _RBIE `Vb ~T0 @X0 1 e@91 ]
+[; ;pic16f887_legacy.h: 166: volatile bit RBIE @ ((unsigned)&INTCON*8)+3;
+"168
+[v _RABIE `Vb ~T0 @X0 1 e@91 ]
+[; ;pic16f887_legacy.h: 168: volatile bit RABIE @ ((unsigned)&INTCON*8)+3;
+"169
+[v _INTE `Vb ~T0 @X0 1 e@92 ]
+[; ;pic16f887_legacy.h: 169: volatile bit INTE @ ((unsigned)&INTCON*8)+4;
+"170
+[v _T0IE `Vb ~T0 @X0 1 e@93 ]
+[; ;pic16f887_legacy.h: 170: volatile bit T0IE @ ((unsigned)&INTCON*8)+5;
+"171
+[v _PEIE `Vb ~T0 @X0 1 e@94 ]
+[; ;pic16f887_legacy.h: 171: volatile bit PEIE @ ((unsigned)&INTCON*8)+6;
+"172
+[v _GIE `Vb ~T0 @X0 1 e@95 ]
+[; ;pic16f887_legacy.h: 172: volatile bit GIE @ ((unsigned)&INTCON*8)+7;
+"175
+[v _TMR1IF `Vb ~T0 @X0 1 e@96 ]
+[; ;pic16f887_legacy.h: 175: volatile bit TMR1IF @ ((unsigned)&PIR1*8)+0;
+"176
+[v _TMR2IF `Vb ~T0 @X0 1 e@97 ]
+[; ;pic16f887_legacy.h: 176: volatile bit TMR2IF @ ((unsigned)&PIR1*8)+1;
+"177
+[v _CCP1IF `Vb ~T0 @X0 1 e@98 ]
+[; ;pic16f887_legacy.h: 177: volatile bit CCP1IF @ ((unsigned)&PIR1*8)+2;
+"178
+[v _SSPIF `Vb ~T0 @X0 1 e@99 ]
+[; ;pic16f887_legacy.h: 178: volatile bit SSPIF @ ((unsigned)&PIR1*8)+3;
+"179
+[v _TXIF `Vb ~T0 @X0 1 e@100 ]
+[; ;pic16f887_legacy.h: 179: volatile bit TXIF @ ((unsigned)&PIR1*8)+4;
+"180
+[v _RCIF `Vb ~T0 @X0 1 e@101 ]
+[; ;pic16f887_legacy.h: 180: volatile bit RCIF @ ((unsigned)&PIR1*8)+5;
+"181
+[v _ADIF `Vb ~T0 @X0 1 e@102 ]
+[; ;pic16f887_legacy.h: 181: volatile bit ADIF @ ((unsigned)&PIR1*8)+6;
+"184
+[v _CCP2IF `Vb ~T0 @X0 1 e@104 ]
+[; ;pic16f887_legacy.h: 184: volatile bit CCP2IF @ ((unsigned)&PIR2*8)+0;
+"185
+[v _ULPWUIF `Vb ~T0 @X0 1 e@106 ]
+[; ;pic16f887_legacy.h: 185: volatile bit ULPWUIF @ ((unsigned)&PIR2*8)+2;
+"186
+[v _BCLIF `Vb ~T0 @X0 1 e@107 ]
+[; ;pic16f887_legacy.h: 186: volatile bit BCLIF @ ((unsigned)&PIR2*8)+3;
+"187
+[v _EEIF `Vb ~T0 @X0 1 e@108 ]
+[; ;pic16f887_legacy.h: 187: volatile bit EEIF @ ((unsigned)&PIR2*8)+4;
+"188
+[v _C1IF `Vb ~T0 @X0 1 e@109 ]
+[; ;pic16f887_legacy.h: 188: volatile bit C1IF @ ((unsigned)&PIR2*8)+5;
+"189
+[v _C2IF `Vb ~T0 @X0 1 e@110 ]
+[; ;pic16f887_legacy.h: 189: volatile bit C2IF @ ((unsigned)&PIR2*8)+6;
+"190
+[v _OSFIF `Vb ~T0 @X0 1 e@111 ]
+[; ;pic16f887_legacy.h: 190: volatile bit OSFIF @ ((unsigned)&PIR2*8)+7;
+"193
+[v _TMR1ON `Vb ~T0 @X0 1 e@128 ]
+[; ;pic16f887_legacy.h: 193: volatile bit TMR1ON @ ((unsigned)&T1CON*8)+0;
+"194
+[v _TMR1CS `Vb ~T0 @X0 1 e@129 ]
+[; ;pic16f887_legacy.h: 194: volatile bit TMR1CS @ ((unsigned)&T1CON*8)+1;
+"195
+[v _T1SYNC `Vb ~T0 @X0 1 e@130 ]
+[; ;pic16f887_legacy.h: 195: volatile bit T1SYNC @ ((unsigned)&T1CON*8)+2;
+"196
+[v _T1OSCEN `Vb ~T0 @X0 1 e@131 ]
+[; ;pic16f887_legacy.h: 196: volatile bit T1OSCEN @ ((unsigned)&T1CON*8)+3;
+"197
+[v _T1CKPS0 `Vb ~T0 @X0 1 e@132 ]
+[; ;pic16f887_legacy.h: 197: volatile bit T1CKPS0 @ ((unsigned)&T1CON*8)+4;
+"198
+[v _T1CKPS1 `Vb ~T0 @X0 1 e@133 ]
+[; ;pic16f887_legacy.h: 198: volatile bit T1CKPS1 @ ((unsigned)&T1CON*8)+5;
+"199
+[v _TMR1GE `Vb ~T0 @X0 1 e@134 ]
+[; ;pic16f887_legacy.h: 199: volatile bit TMR1GE @ ((unsigned)&T1CON*8)+6;
+"200
+[v _T1GINV `Vb ~T0 @X0 1 e@135 ]
+[; ;pic16f887_legacy.h: 200: volatile bit T1GINV @ ((unsigned)&T1CON*8)+7;
+"203
+[v _T2CKPS0 `Vb ~T0 @X0 1 e@144 ]
+[; ;pic16f887_legacy.h: 203: volatile bit T2CKPS0 @ ((unsigned)&T2CON*8)+0;
+"204
+[v _T2CKPS1 `Vb ~T0 @X0 1 e@145 ]
+[; ;pic16f887_legacy.h: 204: volatile bit T2CKPS1 @ ((unsigned)&T2CON*8)+1;
+"205
+[v _TMR2ON `Vb ~T0 @X0 1 e@146 ]
+[; ;pic16f887_legacy.h: 205: volatile bit TMR2ON @ ((unsigned)&T2CON*8)+2;
+"206
+[v _TOUTPS0 `Vb ~T0 @X0 1 e@147 ]
+[; ;pic16f887_legacy.h: 206: volatile bit TOUTPS0 @ ((unsigned)&T2CON*8)+3;
+"207
+[v _TOUTPS1 `Vb ~T0 @X0 1 e@148 ]
+[; ;pic16f887_legacy.h: 207: volatile bit TOUTPS1 @ ((unsigned)&T2CON*8)+4;
+"208
+[v _TOUTPS2 `Vb ~T0 @X0 1 e@149 ]
+[; ;pic16f887_legacy.h: 208: volatile bit TOUTPS2 @ ((unsigned)&T2CON*8)+5;
+"209
+[v _TOUTPS3 `Vb ~T0 @X0 1 e@150 ]
+[; ;pic16f887_legacy.h: 209: volatile bit TOUTPS3 @ ((unsigned)&T2CON*8)+6;
+"212
+[v _SSPM0 `Vb ~T0 @X0 1 e@160 ]
+[; ;pic16f887_legacy.h: 212: volatile bit SSPM0 @ ((unsigned)&SSPCON*8)+0;
+"213
+[v _SSPM1 `Vb ~T0 @X0 1 e@161 ]
+[; ;pic16f887_legacy.h: 213: volatile bit SSPM1 @ ((unsigned)&SSPCON*8)+1;
+"214
+[v _SSPM2 `Vb ~T0 @X0 1 e@162 ]
+[; ;pic16f887_legacy.h: 214: volatile bit SSPM2 @ ((unsigned)&SSPCON*8)+2;
+"215
+[v _SSPM3 `Vb ~T0 @X0 1 e@163 ]
+[; ;pic16f887_legacy.h: 215: volatile bit SSPM3 @ ((unsigned)&SSPCON*8)+3;
+"216
+[v _CKP `Vb ~T0 @X0 1 e@164 ]
+[; ;pic16f887_legacy.h: 216: volatile bit CKP @ ((unsigned)&SSPCON*8)+4;
+"217
+[v _SSPEN `Vb ~T0 @X0 1 e@165 ]
+[; ;pic16f887_legacy.h: 217: volatile bit SSPEN @ ((unsigned)&SSPCON*8)+5;
+"218
+[v _SSPOV `Vb ~T0 @X0 1 e@166 ]
+[; ;pic16f887_legacy.h: 218: volatile bit SSPOV @ ((unsigned)&SSPCON*8)+6;
+"219
+[v _WCOL `Vb ~T0 @X0 1 e@167 ]
+[; ;pic16f887_legacy.h: 219: volatile bit WCOL @ ((unsigned)&SSPCON*8)+7;
+"222
+[v _CCP1M0 `Vb ~T0 @X0 1 e@184 ]
+[; ;pic16f887_legacy.h: 222: volatile bit CCP1M0 @ ((unsigned)&CCP1CON*8)+0;
+"223
+[v _CCP1M1 `Vb ~T0 @X0 1 e@185 ]
+[; ;pic16f887_legacy.h: 223: volatile bit CCP1M1 @ ((unsigned)&CCP1CON*8)+1;
+"224
+[v _CCP1M2 `Vb ~T0 @X0 1 e@186 ]
+[; ;pic16f887_legacy.h: 224: volatile bit CCP1M2 @ ((unsigned)&CCP1CON*8)+2;
+"225
+[v _CCP1M3 `Vb ~T0 @X0 1 e@187 ]
+[; ;pic16f887_legacy.h: 225: volatile bit CCP1M3 @ ((unsigned)&CCP1CON*8)+3;
+"226
+[v _DC1B0 `Vb ~T0 @X0 1 e@188 ]
+[; ;pic16f887_legacy.h: 226: volatile bit DC1B0 @ ((unsigned)&CCP1CON*8)+4;
+"227
+[v _DC1B1 `Vb ~T0 @X0 1 e@189 ]
+[; ;pic16f887_legacy.h: 227: volatile bit DC1B1 @ ((unsigned)&CCP1CON*8)+5;
+"228
+[v _P1M0 `Vb ~T0 @X0 1 e@190 ]
+[; ;pic16f887_legacy.h: 228: volatile bit P1M0 @ ((unsigned)&CCP1CON*8)+6;
+"229
+[v _P1M1 `Vb ~T0 @X0 1 e@191 ]
+[; ;pic16f887_legacy.h: 229: volatile bit P1M1 @ ((unsigned)&CCP1CON*8)+7;
+"232
+[v _RX9D `Vb ~T0 @X0 1 e@192 ]
+[; ;pic16f887_legacy.h: 232: volatile bit RX9D @ ((unsigned)&RCSTA*8)+0;
+"233
+[v _OERR `Vb ~T0 @X0 1 e@193 ]
+[; ;pic16f887_legacy.h: 233: volatile bit OERR @ ((unsigned)&RCSTA*8)+1;
+"234
+[v _FERR `Vb ~T0 @X0 1 e@194 ]
+[; ;pic16f887_legacy.h: 234: volatile bit FERR @ ((unsigned)&RCSTA*8)+2;
+"235
+[v _ADDEN `Vb ~T0 @X0 1 e@195 ]
+[; ;pic16f887_legacy.h: 235: volatile bit ADDEN @ ((unsigned)&RCSTA*8)+3;
+"236
+[v _CREN `Vb ~T0 @X0 1 e@196 ]
+[; ;pic16f887_legacy.h: 236: volatile bit CREN @ ((unsigned)&RCSTA*8)+4;
+"237
+[v _SREN `Vb ~T0 @X0 1 e@197 ]
+[; ;pic16f887_legacy.h: 237: volatile bit SREN @ ((unsigned)&RCSTA*8)+5;
+"238
+[v _RX9 `Vb ~T0 @X0 1 e@198 ]
+[; ;pic16f887_legacy.h: 238: volatile bit RX9 @ ((unsigned)&RCSTA*8)+6;
+"239
+[v _SPEN `Vb ~T0 @X0 1 e@199 ]
+[; ;pic16f887_legacy.h: 239: volatile bit SPEN @ ((unsigned)&RCSTA*8)+7;
+"242
+[v _CCP2M0 `Vb ~T0 @X0 1 e@232 ]
+[; ;pic16f887_legacy.h: 242: volatile bit CCP2M0 @ ((unsigned)&CCP2CON*8)+0;
+"243
+[v _CCP2M1 `Vb ~T0 @X0 1 e@233 ]
+[; ;pic16f887_legacy.h: 243: volatile bit CCP2M1 @ ((unsigned)&CCP2CON*8)+1;
+"244
+[v _CCP2M2 `Vb ~T0 @X0 1 e@234 ]
+[; ;pic16f887_legacy.h: 244: volatile bit CCP2M2 @ ((unsigned)&CCP2CON*8)+2;
+"245
+[v _CCP2M3 `Vb ~T0 @X0 1 e@235 ]
+[; ;pic16f887_legacy.h: 245: volatile bit CCP2M3 @ ((unsigned)&CCP2CON*8)+3;
+"246
+[v _CCP2Y `Vb ~T0 @X0 1 e@236 ]
+[; ;pic16f887_legacy.h: 246: volatile bit CCP2Y @ ((unsigned)&CCP2CON*8)+4;
+"247
+[v _CCP2X `Vb ~T0 @X0 1 e@237 ]
+[; ;pic16f887_legacy.h: 247: volatile bit CCP2X @ ((unsigned)&CCP2CON*8)+5;
+"250
+[v _ADON `Vb ~T0 @X0 1 e@248 ]
+[; ;pic16f887_legacy.h: 250: volatile bit ADON @ ((unsigned)&ADCON0*8)+0;
+"251
+[v _GODONE `Vb ~T0 @X0 1 e@249 ]
+[; ;pic16f887_legacy.h: 251: volatile bit GODONE @ ((unsigned)&ADCON0*8)+1;
+"252
+[v _CHS0 `Vb ~T0 @X0 1 e@250 ]
+[; ;pic16f887_legacy.h: 252: volatile bit CHS0 @ ((unsigned)&ADCON0*8)+2;
+"253
+[v _CHS1 `Vb ~T0 @X0 1 e@251 ]
+[; ;pic16f887_legacy.h: 253: volatile bit CHS1 @ ((unsigned)&ADCON0*8)+3;
+"254
+[v _CHS2 `Vb ~T0 @X0 1 e@252 ]
+[; ;pic16f887_legacy.h: 254: volatile bit CHS2 @ ((unsigned)&ADCON0*8)+4;
+"255
+[v _CHS3 `Vb ~T0 @X0 1 e@253 ]
+[; ;pic16f887_legacy.h: 255: volatile bit CHS3 @ ((unsigned)&ADCON0*8)+5;
+"256
+[v _ADCS0 `Vb ~T0 @X0 1 e@254 ]
+[; ;pic16f887_legacy.h: 256: volatile bit ADCS0 @ ((unsigned)&ADCON0*8)+6;
+"257
+[v _ADCS1 `Vb ~T0 @X0 1 e@255 ]
+[; ;pic16f887_legacy.h: 257: volatile bit ADCS1 @ ((unsigned)&ADCON0*8)+7;
+"260
+[v _PS0 `Vb ~T0 @X0 1 e@1032 ]
+[; ;pic16f887_legacy.h: 260: volatile bit PS0 @ ((unsigned)&OPTION*8)+0;
+"261
+[v _PS1 `Vb ~T0 @X0 1 e@1033 ]
+[; ;pic16f887_legacy.h: 261: volatile bit PS1 @ ((unsigned)&OPTION*8)+1;
+"262
+[v _PS2 `Vb ~T0 @X0 1 e@1034 ]
+[; ;pic16f887_legacy.h: 262: volatile bit PS2 @ ((unsigned)&OPTION*8)+2;
+"263
+[v _PSA `Vb ~T0 @X0 1 e@1035 ]
+[; ;pic16f887_legacy.h: 263: volatile bit PSA @ ((unsigned)&OPTION*8)+3;
+"264
+[v _T0SE `Vb ~T0 @X0 1 e@1036 ]
+[; ;pic16f887_legacy.h: 264: volatile bit T0SE @ ((unsigned)&OPTION*8)+4;
+"265
+[v _T0CS `Vb ~T0 @X0 1 e@1037 ]
+[; ;pic16f887_legacy.h: 265: volatile bit T0CS @ ((unsigned)&OPTION*8)+5;
+"266
+[v _INTEDG `Vb ~T0 @X0 1 e@1038 ]
+[; ;pic16f887_legacy.h: 266: volatile bit INTEDG @ ((unsigned)&OPTION*8)+6;
+"267
+[v _RBPU `Vb ~T0 @X0 1 e@1039 ]
+[; ;pic16f887_legacy.h: 267: volatile bit RBPU @ ((unsigned)&OPTION*8)+7;
+"269
+[v _RABPU `Vb ~T0 @X0 1 e@1039 ]
+[; ;pic16f887_legacy.h: 269: volatile bit RABPU @ ((unsigned)&OPTION*8)+7;
+"272
+[v _TRISA0 `Vb ~T0 @X0 1 e@1064 ]
+[; ;pic16f887_legacy.h: 272: volatile bit TRISA0 @ ((unsigned)&TRISA*8)+0;
+"273
+[v _TRISA1 `Vb ~T0 @X0 1 e@1065 ]
+[; ;pic16f887_legacy.h: 273: volatile bit TRISA1 @ ((unsigned)&TRISA*8)+1;
+"274
+[v _TRISA2 `Vb ~T0 @X0 1 e@1066 ]
+[; ;pic16f887_legacy.h: 274: volatile bit TRISA2 @ ((unsigned)&TRISA*8)+2;
+"275
+[v _TRISA3 `Vb ~T0 @X0 1 e@1067 ]
+[; ;pic16f887_legacy.h: 275: volatile bit TRISA3 @ ((unsigned)&TRISA*8)+3;
+"276
+[v _TRISA4 `Vb ~T0 @X0 1 e@1068 ]
+[; ;pic16f887_legacy.h: 276: volatile bit TRISA4 @ ((unsigned)&TRISA*8)+4;
+"277
+[v _TRISA5 `Vb ~T0 @X0 1 e@1069 ]
+[; ;pic16f887_legacy.h: 277: volatile bit TRISA5 @ ((unsigned)&TRISA*8)+5;
+"278
+[v _TRISA6 `Vb ~T0 @X0 1 e@1070 ]
+[; ;pic16f887_legacy.h: 278: volatile bit TRISA6 @ ((unsigned)&TRISA*8)+6;
+"279
+[v _TRISA7 `Vb ~T0 @X0 1 e@1071 ]
+[; ;pic16f887_legacy.h: 279: volatile bit TRISA7 @ ((unsigned)&TRISA*8)+7;
+"282
+[v _TRISB0 `Vb ~T0 @X0 1 e@1072 ]
+[; ;pic16f887_legacy.h: 282: volatile bit TRISB0 @ ((unsigned)&TRISB*8)+0;
+"283
+[v _TRISB1 `Vb ~T0 @X0 1 e@1073 ]
+[; ;pic16f887_legacy.h: 283: volatile bit TRISB1 @ ((unsigned)&TRISB*8)+1;
+"284
+[v _TRISB2 `Vb ~T0 @X0 1 e@1074 ]
+[; ;pic16f887_legacy.h: 284: volatile bit TRISB2 @ ((unsigned)&TRISB*8)+2;
+"285
+[v _TRISB3 `Vb ~T0 @X0 1 e@1075 ]
+[; ;pic16f887_legacy.h: 285: volatile bit TRISB3 @ ((unsigned)&TRISB*8)+3;
+"286
+[v _TRISB4 `Vb ~T0 @X0 1 e@1076 ]
+[; ;pic16f887_legacy.h: 286: volatile bit TRISB4 @ ((unsigned)&TRISB*8)+4;
+"287
+[v _TRISB5 `Vb ~T0 @X0 1 e@1077 ]
+[; ;pic16f887_legacy.h: 287: volatile bit TRISB5 @ ((unsigned)&TRISB*8)+5;
+"288
+[v _TRISB6 `Vb ~T0 @X0 1 e@1078 ]
+[; ;pic16f887_legacy.h: 288: volatile bit TRISB6 @ ((unsigned)&TRISB*8)+6;
+"289
+[v _TRISB7 `Vb ~T0 @X0 1 e@1079 ]
+[; ;pic16f887_legacy.h: 289: volatile bit TRISB7 @ ((unsigned)&TRISB*8)+7;
+"292
+[v _TRISC0 `Vb ~T0 @X0 1 e@1080 ]
+[; ;pic16f887_legacy.h: 292: volatile bit TRISC0 @ ((unsigned)&TRISC*8)+0;
+"293
+[v _TRISC1 `Vb ~T0 @X0 1 e@1081 ]
+[; ;pic16f887_legacy.h: 293: volatile bit TRISC1 @ ((unsigned)&TRISC*8)+1;
+"294
+[v _TRISC2 `Vb ~T0 @X0 1 e@1082 ]
+[; ;pic16f887_legacy.h: 294: volatile bit TRISC2 @ ((unsigned)&TRISC*8)+2;
+"295
+[v _TRISC3 `Vb ~T0 @X0 1 e@1083 ]
+[; ;pic16f887_legacy.h: 295: volatile bit TRISC3 @ ((unsigned)&TRISC*8)+3;
+"296
+[v _TRISC4 `Vb ~T0 @X0 1 e@1084 ]
+[; ;pic16f887_legacy.h: 296: volatile bit TRISC4 @ ((unsigned)&TRISC*8)+4;
+"297
+[v _TRISC5 `Vb ~T0 @X0 1 e@1085 ]
+[; ;pic16f887_legacy.h: 297: volatile bit TRISC5 @ ((unsigned)&TRISC*8)+5;
+"298
+[v _TRISC6 `Vb ~T0 @X0 1 e@1086 ]
+[; ;pic16f887_legacy.h: 298: volatile bit TRISC6 @ ((unsigned)&TRISC*8)+6;
+"299
+[v _TRISC7 `Vb ~T0 @X0 1 e@1087 ]
+[; ;pic16f887_legacy.h: 299: volatile bit TRISC7 @ ((unsigned)&TRISC*8)+7;
+"303
+[v _TRISD0 `Vb ~T0 @X0 1 e@1088 ]
+[; ;pic16f887_legacy.h: 303: volatile bit TRISD0 @ ((unsigned)&TRISD*8)+0;
+"304
+[v _TRISD1 `Vb ~T0 @X0 1 e@1089 ]
+[; ;pic16f887_legacy.h: 304: volatile bit TRISD1 @ ((unsigned)&TRISD*8)+1;
+"305
+[v _TRISD2 `Vb ~T0 @X0 1 e@1090 ]
+[; ;pic16f887_legacy.h: 305: volatile bit TRISD2 @ ((unsigned)&TRISD*8)+2;
+"306
+[v _TRISD3 `Vb ~T0 @X0 1 e@1091 ]
+[; ;pic16f887_legacy.h: 306: volatile bit TRISD3 @ ((unsigned)&TRISD*8)+3;
+"307
+[v _TRISD4 `Vb ~T0 @X0 1 e@1092 ]
+[; ;pic16f887_legacy.h: 307: volatile bit TRISD4 @ ((unsigned)&TRISD*8)+4;
+"308
+[v _TRISD5 `Vb ~T0 @X0 1 e@1093 ]
+[; ;pic16f887_legacy.h: 308: volatile bit TRISD5 @ ((unsigned)&TRISD*8)+5;
+"309
+[v _TRISD6 `Vb ~T0 @X0 1 e@1094 ]
+[; ;pic16f887_legacy.h: 309: volatile bit TRISD6 @ ((unsigned)&TRISD*8)+6;
+"310
+[v _TRISD7 `Vb ~T0 @X0 1 e@1095 ]
+[; ;pic16f887_legacy.h: 310: volatile bit TRISD7 @ ((unsigned)&TRISD*8)+7;
+"313
+[v _TRISE0 `Vb ~T0 @X0 1 e@1096 ]
+[; ;pic16f887_legacy.h: 313: volatile bit TRISE0 @ ((unsigned)&TRISE*8)+0;
+"314
+[v _TRISE1 `Vb ~T0 @X0 1 e@1097 ]
+[; ;pic16f887_legacy.h: 314: volatile bit TRISE1 @ ((unsigned)&TRISE*8)+1;
+"315
+[v _TRISE2 `Vb ~T0 @X0 1 e@1098 ]
+[; ;pic16f887_legacy.h: 315: volatile bit TRISE2 @ ((unsigned)&TRISE*8)+2;
+"317
+[v _TRISE3 `Vb ~T0 @X0 1 e@1099 ]
+[; ;pic16f887_legacy.h: 317: volatile bit TRISE3 @ ((unsigned)&TRISE*8)+3;
+"320
+[v _TMR1IE `Vb ~T0 @X0 1 e@1120 ]
+[; ;pic16f887_legacy.h: 320: volatile bit TMR1IE @ ((unsigned)&PIE1*8)+0;
+"321
+[v _TMR2IE `Vb ~T0 @X0 1 e@1121 ]
+[; ;pic16f887_legacy.h: 321: volatile bit TMR2IE @ ((unsigned)&PIE1*8)+1;
+"322
+[v _CCP1IE `Vb ~T0 @X0 1 e@1122 ]
+[; ;pic16f887_legacy.h: 322: volatile bit CCP1IE @ ((unsigned)&PIE1*8)+2;
+"323
+[v _SSPIE `Vb ~T0 @X0 1 e@1123 ]
+[; ;pic16f887_legacy.h: 323: volatile bit SSPIE @ ((unsigned)&PIE1*8)+3;
+"324
+[v _TXIE `Vb ~T0 @X0 1 e@1124 ]
+[; ;pic16f887_legacy.h: 324: volatile bit TXIE @ ((unsigned)&PIE1*8)+4;
+"325
+[v _RCIE `Vb ~T0 @X0 1 e@1125 ]
+[; ;pic16f887_legacy.h: 325: volatile bit RCIE @ ((unsigned)&PIE1*8)+5;
+"326
+[v _ADIE `Vb ~T0 @X0 1 e@1126 ]
+[; ;pic16f887_legacy.h: 326: volatile bit ADIE @ ((unsigned)&PIE1*8)+6;
+"329
+[v _CCP2IE `Vb ~T0 @X0 1 e@1128 ]
+[; ;pic16f887_legacy.h: 329: volatile bit CCP2IE @ ((unsigned)&PIE2*8)+0;
+"330
+[v _ULPWUIE `Vb ~T0 @X0 1 e@1130 ]
+[; ;pic16f887_legacy.h: 330: volatile bit ULPWUIE @ ((unsigned)&PIE2*8)+2;
+"331
+[v _BCLIE `Vb ~T0 @X0 1 e@1131 ]
+[; ;pic16f887_legacy.h: 331: volatile bit BCLIE @ ((unsigned)&PIE2*8)+3;
+"332
+[v _EEIE `Vb ~T0 @X0 1 e@1132 ]
+[; ;pic16f887_legacy.h: 332: volatile bit EEIE @ ((unsigned)&PIE2*8)+4;
+"333
+[v _C1IE `Vb ~T0 @X0 1 e@1133 ]
+[; ;pic16f887_legacy.h: 333: volatile bit C1IE @ ((unsigned)&PIE2*8)+5;
+"334
+[v _C2IE `Vb ~T0 @X0 1 e@1134 ]
+[; ;pic16f887_legacy.h: 334: volatile bit C2IE @ ((unsigned)&PIE2*8)+6;
+"335
+[v _OSFIE `Vb ~T0 @X0 1 e@1135 ]
+[; ;pic16f887_legacy.h: 335: volatile bit OSFIE @ ((unsigned)&PIE2*8)+7;
+"338
+[v _BOR `Vb ~T0 @X0 1 e@1136 ]
+[; ;pic16f887_legacy.h: 338: volatile bit BOR @ ((unsigned)&PCON*8)+0;
+"339
+[v _POR `Vb ~T0 @X0 1 e@1137 ]
+[; ;pic16f887_legacy.h: 339: volatile bit POR @ ((unsigned)&PCON*8)+1;
+"340
+[v _SBOREN `Vb ~T0 @X0 1 e@1140 ]
+[; ;pic16f887_legacy.h: 340: volatile bit SBOREN @ ((unsigned)&PCON*8)+4;
+"341
+[v _ULPWUE `Vb ~T0 @X0 1 e@1141 ]
+[; ;pic16f887_legacy.h: 341: volatile bit ULPWUE @ ((unsigned)&PCON*8)+5;
+"344
+[v _SCS `Vb ~T0 @X0 1 e@1144 ]
+[; ;pic16f887_legacy.h: 344: volatile bit SCS @ ((unsigned)&OSCCON*8)+0;
+"345
+[v _LTS `Vb ~T0 @X0 1 e@1145 ]
+[; ;pic16f887_legacy.h: 345: volatile bit LTS @ ((unsigned)&OSCCON*8)+1;
+"346
+[v _HTS `Vb ~T0 @X0 1 e@1146 ]
+[; ;pic16f887_legacy.h: 346: volatile bit HTS @ ((unsigned)&OSCCON*8)+2;
+"347
+[v _OSTS `Vb ~T0 @X0 1 e@1147 ]
+[; ;pic16f887_legacy.h: 347: volatile bit OSTS @ ((unsigned)&OSCCON*8)+3;
+"348
+[v _IRCF0 `Vb ~T0 @X0 1 e@1148 ]
+[; ;pic16f887_legacy.h: 348: volatile bit IRCF0 @ ((unsigned)&OSCCON*8)+4;
+"349
+[v _IRCF1 `Vb ~T0 @X0 1 e@1149 ]
+[; ;pic16f887_legacy.h: 349: volatile bit IRCF1 @ ((unsigned)&OSCCON*8)+5;
+"350
+[v _IRCF2 `Vb ~T0 @X0 1 e@1150 ]
+[; ;pic16f887_legacy.h: 350: volatile bit IRCF2 @ ((unsigned)&OSCCON*8)+6;
+"353
+[v _TUN0 `Vb ~T0 @X0 1 e@1152 ]
+[; ;pic16f887_legacy.h: 353: volatile bit TUN0 @ ((unsigned)&OSCTUNE*8)+0;
+"354
+[v _TUN1 `Vb ~T0 @X0 1 e@1153 ]
+[; ;pic16f887_legacy.h: 354: volatile bit TUN1 @ ((unsigned)&OSCTUNE*8)+1;
+"355
+[v _TUN2 `Vb ~T0 @X0 1 e@1154 ]
+[; ;pic16f887_legacy.h: 355: volatile bit TUN2 @ ((unsigned)&OSCTUNE*8)+2;
+"356
+[v _TUN3 `Vb ~T0 @X0 1 e@1155 ]
+[; ;pic16f887_legacy.h: 356: volatile bit TUN3 @ ((unsigned)&OSCTUNE*8)+3;
+"357
+[v _TUN4 `Vb ~T0 @X0 1 e@1156 ]
+[; ;pic16f887_legacy.h: 357: volatile bit TUN4 @ ((unsigned)&OSCTUNE*8)+4;
+"360
+[v _SEN `Vb ~T0 @X0 1 e@1160 ]
+[; ;pic16f887_legacy.h: 360: volatile bit SEN @ ((unsigned)&SSPCON2*8)+0;
+"361
+[v _RSEN `Vb ~T0 @X0 1 e@1161 ]
+[; ;pic16f887_legacy.h: 361: volatile bit RSEN @ ((unsigned)&SSPCON2*8)+1;
+"362
+[v _PEN `Vb ~T0 @X0 1 e@1162 ]
+[; ;pic16f887_legacy.h: 362: volatile bit PEN @ ((unsigned)&SSPCON2*8)+2;
+"363
+[v _RCEN `Vb ~T0 @X0 1 e@1163 ]
+[; ;pic16f887_legacy.h: 363: volatile bit RCEN @ ((unsigned)&SSPCON2*8)+3;
+"364
+[v _ACKEN `Vb ~T0 @X0 1 e@1164 ]
+[; ;pic16f887_legacy.h: 364: volatile bit ACKEN @ ((unsigned)&SSPCON2*8)+4;
+"365
+[v _ACKDT `Vb ~T0 @X0 1 e@1165 ]
+[; ;pic16f887_legacy.h: 365: volatile bit ACKDT @ ((unsigned)&SSPCON2*8)+5;
+"366
+[v _ACKSTAT `Vb ~T0 @X0 1 e@1166 ]
+[; ;pic16f887_legacy.h: 366: volatile bit ACKSTAT @ ((unsigned)&SSPCON2*8)+6;
+"367
+[v _GCEN `Vb ~T0 @X0 1 e@1167 ]
+[; ;pic16f887_legacy.h: 367: volatile bit GCEN @ ((unsigned)&SSPCON2*8)+7;
+"370
+[v _BF `Vb ~T0 @X0 1 e@1184 ]
+[; ;pic16f887_legacy.h: 370: volatile bit BF @ ((unsigned)&SSPSTAT*8)+0;
+"371
+[v _UA `Vb ~T0 @X0 1 e@1185 ]
+[; ;pic16f887_legacy.h: 371: volatile bit UA @ ((unsigned)&SSPSTAT*8)+1;
+"372
+[v _RW `Vb ~T0 @X0 1 e@1186 ]
+[; ;pic16f887_legacy.h: 372: volatile bit RW @ ((unsigned)&SSPSTAT*8)+2;
+"373
+[v _START `Vb ~T0 @X0 1 e@1187 ]
+[; ;pic16f887_legacy.h: 373: volatile bit START @ ((unsigned)&SSPSTAT*8)+3;
+"374
+[v _STOP `Vb ~T0 @X0 1 e@1188 ]
+[; ;pic16f887_legacy.h: 374: volatile bit STOP @ ((unsigned)&SSPSTAT*8)+4;
+"375
+[v _DA `Vb ~T0 @X0 1 e@1189 ]
+[; ;pic16f887_legacy.h: 375: volatile bit DA @ ((unsigned)&SSPSTAT*8)+5;
+"376
+[v _CKE `Vb ~T0 @X0 1 e@1190 ]
+[; ;pic16f887_legacy.h: 376: volatile bit CKE @ ((unsigned)&SSPSTAT*8)+6;
+"377
+[v _SMP `Vb ~T0 @X0 1 e@1191 ]
+[; ;pic16f887_legacy.h: 377: volatile bit SMP @ ((unsigned)&SSPSTAT*8)+7;
+"380
+[v _WPUB0 `Vb ~T0 @X0 1 e@1192 ]
+[; ;pic16f887_legacy.h: 380: volatile bit WPUB0 @ ((unsigned)&WPUB*8)+0;
+"381
+[v _WPUB1 `Vb ~T0 @X0 1 e@1193 ]
+[; ;pic16f887_legacy.h: 381: volatile bit WPUB1 @ ((unsigned)&WPUB*8)+1;
+"382
+[v _WPUB2 `Vb ~T0 @X0 1 e@1194 ]
+[; ;pic16f887_legacy.h: 382: volatile bit WPUB2 @ ((unsigned)&WPUB*8)+2;
+"383
+[v _WPUB3 `Vb ~T0 @X0 1 e@1195 ]
+[; ;pic16f887_legacy.h: 383: volatile bit WPUB3 @ ((unsigned)&WPUB*8)+3;
+"384
+[v _WPUB4 `Vb ~T0 @X0 1 e@1196 ]
+[; ;pic16f887_legacy.h: 384: volatile bit WPUB4 @ ((unsigned)&WPUB*8)+4;
+"385
+[v _WPUB5 `Vb ~T0 @X0 1 e@1197 ]
+[; ;pic16f887_legacy.h: 385: volatile bit WPUB5 @ ((unsigned)&WPUB*8)+5;
+"386
+[v _WPUB6 `Vb ~T0 @X0 1 e@1198 ]
+[; ;pic16f887_legacy.h: 386: volatile bit WPUB6 @ ((unsigned)&WPUB*8)+6;
+"387
+[v _WPUB7 `Vb ~T0 @X0 1 e@1199 ]
+[; ;pic16f887_legacy.h: 387: volatile bit WPUB7 @ ((unsigned)&WPUB*8)+7;
+"390
+[v _IOCB0 `Vb ~T0 @X0 1 e@1200 ]
+[; ;pic16f887_legacy.h: 390: volatile bit IOCB0 @ ((unsigned)&IOCB*8)+0;
+"391
+[v _IOCB1 `Vb ~T0 @X0 1 e@1201 ]
+[; ;pic16f887_legacy.h: 391: volatile bit IOCB1 @ ((unsigned)&IOCB*8)+1;
+"392
+[v _IOCB2 `Vb ~T0 @X0 1 e@1202 ]
+[; ;pic16f887_legacy.h: 392: volatile bit IOCB2 @ ((unsigned)&IOCB*8)+2;
+"393
+[v _IOCB3 `Vb ~T0 @X0 1 e@1203 ]
+[; ;pic16f887_legacy.h: 393: volatile bit IOCB3 @ ((unsigned)&IOCB*8)+3;
+"394
+[v _IOCB4 `Vb ~T0 @X0 1 e@1204 ]
+[; ;pic16f887_legacy.h: 394: volatile bit IOCB4 @ ((unsigned)&IOCB*8)+4;
+"395
+[v _IOCB5 `Vb ~T0 @X0 1 e@1205 ]
+[; ;pic16f887_legacy.h: 395: volatile bit IOCB5 @ ((unsigned)&IOCB*8)+5;
+"396
+[v _IOCB6 `Vb ~T0 @X0 1 e@1206 ]
+[; ;pic16f887_legacy.h: 396: volatile bit IOCB6 @ ((unsigned)&IOCB*8)+6;
+"397
+[v _IOCB7 `Vb ~T0 @X0 1 e@1207 ]
+[; ;pic16f887_legacy.h: 397: volatile bit IOCB7 @ ((unsigned)&IOCB*8)+7;
+"400
+[v _VR0 `Vb ~T0 @X0 1 e@1208 ]
+[; ;pic16f887_legacy.h: 400: volatile bit VR0 @ ((unsigned)&VRCON*8)+0;
+"401
+[v _VR1 `Vb ~T0 @X0 1 e@1209 ]
+[; ;pic16f887_legacy.h: 401: volatile bit VR1 @ ((unsigned)&VRCON*8)+1;
+"402
+[v _VR2 `Vb ~T0 @X0 1 e@1210 ]
+[; ;pic16f887_legacy.h: 402: volatile bit VR2 @ ((unsigned)&VRCON*8)+2;
+"403
+[v _VR3 `Vb ~T0 @X0 1 e@1211 ]
+[; ;pic16f887_legacy.h: 403: volatile bit VR3 @ ((unsigned)&VRCON*8)+3;
+"404
+[v _VRSS `Vb ~T0 @X0 1 e@1212 ]
+[; ;pic16f887_legacy.h: 404: volatile bit VRSS @ ((unsigned)&VRCON*8)+4;
+"405
+[v _VRR `Vb ~T0 @X0 1 e@1213 ]
+[; ;pic16f887_legacy.h: 405: volatile bit VRR @ ((unsigned)&VRCON*8)+5;
+"406
+[v _VROE `Vb ~T0 @X0 1 e@1214 ]
+[; ;pic16f887_legacy.h: 406: volatile bit VROE @ ((unsigned)&VRCON*8)+6;
+"407
+[v _VREN `Vb ~T0 @X0 1 e@1215 ]
+[; ;pic16f887_legacy.h: 407: volatile bit VREN @ ((unsigned)&VRCON*8)+7;
+"410
+[v _TX9D `Vb ~T0 @X0 1 e@1216 ]
+[; ;pic16f887_legacy.h: 410: volatile bit TX9D @ ((unsigned)&TXSTA*8)+0;
+"411
+[v _TRMT `Vb ~T0 @X0 1 e@1217 ]
+[; ;pic16f887_legacy.h: 411: volatile bit TRMT @ ((unsigned)&TXSTA*8)+1;
+"412
+[v _BRGH `Vb ~T0 @X0 1 e@1218 ]
+[; ;pic16f887_legacy.h: 412: volatile bit BRGH @ ((unsigned)&TXSTA*8)+2;
+"413
+[v _SENDB `Vb ~T0 @X0 1 e@1219 ]
+[; ;pic16f887_legacy.h: 413: volatile bit SENDB @ ((unsigned)&TXSTA*8)+3;
+"414
+[v _SYNC `Vb ~T0 @X0 1 e@1220 ]
+[; ;pic16f887_legacy.h: 414: volatile bit SYNC @ ((unsigned)&TXSTA*8)+4;
+"415
+[v _TXEN `Vb ~T0 @X0 1 e@1221 ]
+[; ;pic16f887_legacy.h: 415: volatile bit TXEN @ ((unsigned)&TXSTA*8)+5;
+"416
+[v _TX9 `Vb ~T0 @X0 1 e@1222 ]
+[; ;pic16f887_legacy.h: 416: volatile bit TX9 @ ((unsigned)&TXSTA*8)+6;
+"417
+[v _CSRC `Vb ~T0 @X0 1 e@1223 ]
+[; ;pic16f887_legacy.h: 417: volatile bit CSRC @ ((unsigned)&TXSTA*8)+7;
+"420
+[v _BRG0 `Vb ~T0 @X0 1 e@1224 ]
+[; ;pic16f887_legacy.h: 420: volatile bit BRG0 @ ((unsigned)&SPBRG*8)+0;
+"421
+[v _BRG1 `Vb ~T0 @X0 1 e@1225 ]
+[; ;pic16f887_legacy.h: 421: volatile bit BRG1 @ ((unsigned)&SPBRG*8)+1;
+"422
+[v _BRG2 `Vb ~T0 @X0 1 e@1226 ]
+[; ;pic16f887_legacy.h: 422: volatile bit BRG2 @ ((unsigned)&SPBRG*8)+2;
+"423
+[v _BRG3 `Vb ~T0 @X0 1 e@1227 ]
+[; ;pic16f887_legacy.h: 423: volatile bit BRG3 @ ((unsigned)&SPBRG*8)+3;
+"424
+[v _BRG4 `Vb ~T0 @X0 1 e@1228 ]
+[; ;pic16f887_legacy.h: 424: volatile bit BRG4 @ ((unsigned)&SPBRG*8)+4;
+"425
+[v _BRG5 `Vb ~T0 @X0 1 e@1229 ]
+[; ;pic16f887_legacy.h: 425: volatile bit BRG5 @ ((unsigned)&SPBRG*8)+5;
+"426
+[v _BRG6 `Vb ~T0 @X0 1 e@1230 ]
+[; ;pic16f887_legacy.h: 426: volatile bit BRG6 @ ((unsigned)&SPBRG*8)+6;
+"427
+[v _BRG7 `Vb ~T0 @X0 1 e@1231 ]
+[; ;pic16f887_legacy.h: 427: volatile bit BRG7 @ ((unsigned)&SPBRG*8)+7;
+"430
+[v _BRG8 `Vb ~T0 @X0 1 e@1232 ]
+[; ;pic16f887_legacy.h: 430: volatile bit BRG8 @ ((unsigned)&SPBRGH*8)+0;
+"431
+[v _BRG9 `Vb ~T0 @X0 1 e@1233 ]
+[; ;pic16f887_legacy.h: 431: volatile bit BRG9 @ ((unsigned)&SPBRGH*8)+1;
+"432
+[v _BRG10 `Vb ~T0 @X0 1 e@1234 ]
+[; ;pic16f887_legacy.h: 432: volatile bit BRG10 @ ((unsigned)&SPBRGH*8)+2;
+"433
+[v _BRG11 `Vb ~T0 @X0 1 e@1235 ]
+[; ;pic16f887_legacy.h: 433: volatile bit BRG11 @ ((unsigned)&SPBRGH*8)+3;
+"434
+[v _BRG12 `Vb ~T0 @X0 1 e@1236 ]
+[; ;pic16f887_legacy.h: 434: volatile bit BRG12 @ ((unsigned)&SPBRGH*8)+4;
+"435
+[v _BRG13 `Vb ~T0 @X0 1 e@1237 ]
+[; ;pic16f887_legacy.h: 435: volatile bit BRG13 @ ((unsigned)&SPBRGH*8)+5;
+"436
+[v _BRG14 `Vb ~T0 @X0 1 e@1238 ]
+[; ;pic16f887_legacy.h: 436: volatile bit BRG14 @ ((unsigned)&SPBRGH*8)+6;
+"437
+[v _BRG15 `Vb ~T0 @X0 1 e@1239 ]
+[; ;pic16f887_legacy.h: 437: volatile bit BRG15 @ ((unsigned)&SPBRGH*8)+7;
+"440
+[v _PDC0 `Vb ~T0 @X0 1 e@1240 ]
+[; ;pic16f887_legacy.h: 440: volatile bit PDC0 @ ((unsigned)&PWM1CON*8)+0;
+"441
+[v _PDC1 `Vb ~T0 @X0 1 e@1241 ]
+[; ;pic16f887_legacy.h: 441: volatile bit PDC1 @ ((unsigned)&PWM1CON*8)+1;
+"442
+[v _PDC2 `Vb ~T0 @X0 1 e@1242 ]
+[; ;pic16f887_legacy.h: 442: volatile bit PDC2 @ ((unsigned)&PWM1CON*8)+2;
+"443
+[v _PDC3 `Vb ~T0 @X0 1 e@1243 ]
+[; ;pic16f887_legacy.h: 443: volatile bit PDC3 @ ((unsigned)&PWM1CON*8)+3;
+"444
+[v _PDC4 `Vb ~T0 @X0 1 e@1244 ]
+[; ;pic16f887_legacy.h: 444: volatile bit PDC4 @ ((unsigned)&PWM1CON*8)+4;
+"445
+[v _PDC5 `Vb ~T0 @X0 1 e@1245 ]
+[; ;pic16f887_legacy.h: 445: volatile bit PDC5 @ ((unsigned)&PWM1CON*8)+5;
+"446
+[v _PDC6 `Vb ~T0 @X0 1 e@1246 ]
+[; ;pic16f887_legacy.h: 446: volatile bit PDC6 @ ((unsigned)&PWM1CON*8)+6;
+"447
+[v _PRSEN `Vb ~T0 @X0 1 e@1247 ]
+[; ;pic16f887_legacy.h: 447: volatile bit PRSEN @ ((unsigned)&PWM1CON*8)+7;
+"450
+[v _PSSBD0 `Vb ~T0 @X0 1 e@1248 ]
+[; ;pic16f887_legacy.h: 450: volatile bit PSSBD0 @ ((unsigned)&ECCPAS*8)+0;
+"451
+[v _PSSBD1 `Vb ~T0 @X0 1 e@1249 ]
+[; ;pic16f887_legacy.h: 451: volatile bit PSSBD1 @ ((unsigned)&ECCPAS*8)+1;
+"452
+[v _PSSAC0 `Vb ~T0 @X0 1 e@1250 ]
+[; ;pic16f887_legacy.h: 452: volatile bit PSSAC0 @ ((unsigned)&ECCPAS*8)+2;
+"453
+[v _PSSAC1 `Vb ~T0 @X0 1 e@1251 ]
+[; ;pic16f887_legacy.h: 453: volatile bit PSSAC1 @ ((unsigned)&ECCPAS*8)+3;
+"454
+[v _ECCPAS0 `Vb ~T0 @X0 1 e@1252 ]
+[; ;pic16f887_legacy.h: 454: volatile bit ECCPAS0 @ ((unsigned)&ECCPAS*8)+4;
+"455
+[v _ECCPAS1 `Vb ~T0 @X0 1 e@1253 ]
+[; ;pic16f887_legacy.h: 455: volatile bit ECCPAS1 @ ((unsigned)&ECCPAS*8)+5;
+"456
+[v _ECCPAS2 `Vb ~T0 @X0 1 e@1254 ]
+[; ;pic16f887_legacy.h: 456: volatile bit ECCPAS2 @ ((unsigned)&ECCPAS*8)+6;
+"457
+[v _ECCPASE `Vb ~T0 @X0 1 e@1255 ]
+[; ;pic16f887_legacy.h: 457: volatile bit ECCPASE @ ((unsigned)&ECCPAS*8)+7;
+"460
+[v _STRA `Vb ~T0 @X0 1 e@1256 ]
+[; ;pic16f887_legacy.h: 460: volatile bit STRA @ ((unsigned)&PSTRCON*8)+0;
+"461
+[v _STRB `Vb ~T0 @X0 1 e@1257 ]
+[; ;pic16f887_legacy.h: 461: volatile bit STRB @ ((unsigned)&PSTRCON*8)+1;
+"462
+[v _STRC `Vb ~T0 @X0 1 e@1258 ]
+[; ;pic16f887_legacy.h: 462: volatile bit STRC @ ((unsigned)&PSTRCON*8)+2;
+"463
+[v _STRD `Vb ~T0 @X0 1 e@1259 ]
+[; ;pic16f887_legacy.h: 463: volatile bit STRD @ ((unsigned)&PSTRCON*8)+3;
+"464
+[v _STRSYNC `Vb ~T0 @X0 1 e@1260 ]
+[; ;pic16f887_legacy.h: 464: volatile bit STRSYNC @ ((unsigned)&PSTRCON*8)+4;
+"467
+[v _VCFG0 `Vb ~T0 @X0 1 e@1276 ]
+[; ;pic16f887_legacy.h: 467: volatile bit VCFG0 @ ((unsigned)&ADCON1*8)+4;
+"468
+[v _VCFG1 `Vb ~T0 @X0 1 e@1277 ]
+[; ;pic16f887_legacy.h: 468: volatile bit VCFG1 @ ((unsigned)&ADCON1*8)+5;
+"469
+[v _ADFM `Vb ~T0 @X0 1 e@1279 ]
+[; ;pic16f887_legacy.h: 469: volatile bit ADFM @ ((unsigned)&ADCON1*8)+7;
+"472
+[v _SWDTEN `Vb ~T0 @X0 1 e@2088 ]
+[; ;pic16f887_legacy.h: 472: volatile bit SWDTEN @ ((unsigned)&WDTCON*8)+0;
+"473
+[v _WDTPS0 `Vb ~T0 @X0 1 e@2089 ]
+[; ;pic16f887_legacy.h: 473: volatile bit WDTPS0 @ ((unsigned)&WDTCON*8)+1;
+"474
+[v _WDTPS1 `Vb ~T0 @X0 1 e@2090 ]
+[; ;pic16f887_legacy.h: 474: volatile bit WDTPS1 @ ((unsigned)&WDTCON*8)+2;
+"475
+[v _WDTPS2 `Vb ~T0 @X0 1 e@2091 ]
+[; ;pic16f887_legacy.h: 475: volatile bit WDTPS2 @ ((unsigned)&WDTCON*8)+3;
+"476
+[v _WDTPS3 `Vb ~T0 @X0 1 e@2092 ]
+[; ;pic16f887_legacy.h: 476: volatile bit WDTPS3 @ ((unsigned)&WDTCON*8)+4;
+"479
+[v _C1CH0 `Vb ~T0 @X0 1 e@2104 ]
+[; ;pic16f887_legacy.h: 479: volatile bit C1CH0 @ ((unsigned)&CM1CON0*8)+0;
+"480
+[v _C1CH1 `Vb ~T0 @X0 1 e@2105 ]
+[; ;pic16f887_legacy.h: 480: volatile bit C1CH1 @ ((unsigned)&CM1CON0*8)+1;
+"481
+[v _C1R `Vb ~T0 @X0 1 e@2106 ]
+[; ;pic16f887_legacy.h: 481: volatile bit C1R @ ((unsigned)&CM1CON0*8)+2;
+"482
+[v _C1POL `Vb ~T0 @X0 1 e@2108 ]
+[; ;pic16f887_legacy.h: 482: volatile bit C1POL @ ((unsigned)&CM1CON0*8)+4;
+"483
+[v _C1OE `Vb ~T0 @X0 1 e@2109 ]
+[; ;pic16f887_legacy.h: 483: volatile bit C1OE @ ((unsigned)&CM1CON0*8)+5;
+"484
+[v _C1OUT `Vb ~T0 @X0 1 e@2110 ]
+[; ;pic16f887_legacy.h: 484: volatile bit C1OUT @ ((unsigned)&CM1CON0*8)+6;
+"485
+[v _C1ON `Vb ~T0 @X0 1 e@2111 ]
+[; ;pic16f887_legacy.h: 485: volatile bit C1ON @ ((unsigned)&CM1CON0*8)+7;
+"488
+[v _C2CH0 `Vb ~T0 @X0 1 e@2112 ]
+[; ;pic16f887_legacy.h: 488: volatile bit C2CH0 @ ((unsigned)&CM2CON0*8)+0;
+"489
+[v _C2CH1 `Vb ~T0 @X0 1 e@2113 ]
+[; ;pic16f887_legacy.h: 489: volatile bit C2CH1 @ ((unsigned)&CM2CON0*8)+1;
+"490
+[v _C2R `Vb ~T0 @X0 1 e@2114 ]
+[; ;pic16f887_legacy.h: 490: volatile bit C2R @ ((unsigned)&CM2CON0*8)+2;
+"491
+[v _C2POL `Vb ~T0 @X0 1 e@2116 ]
+[; ;pic16f887_legacy.h: 491: volatile bit C2POL @ ((unsigned)&CM2CON0*8)+4;
+"492
+[v _C2OE `Vb ~T0 @X0 1 e@2117 ]
+[; ;pic16f887_legacy.h: 492: volatile bit C2OE @ ((unsigned)&CM2CON0*8)+5;
+"493
+[v _C2OUT `Vb ~T0 @X0 1 e@2118 ]
+[; ;pic16f887_legacy.h: 493: volatile bit C2OUT @ ((unsigned)&CM2CON0*8)+6;
+"494
+[v _C2ON `Vb ~T0 @X0 1 e@2119 ]
+[; ;pic16f887_legacy.h: 494: volatile bit C2ON @ ((unsigned)&CM2CON0*8)+7;
+"497
+[v _C2SYNC `Vb ~T0 @X0 1 e@2120 ]
+[; ;pic16f887_legacy.h: 497: volatile bit C2SYNC @ ((unsigned)&CM2CON1*8)+0;
+"498
+[v _T1GSS `Vb ~T0 @X0 1 e@2121 ]
+[; ;pic16f887_legacy.h: 498: volatile bit T1GSS @ ((unsigned)&CM2CON1*8)+1;
+"499
+[v _C2RSEL `Vb ~T0 @X0 1 e@2124 ]
+[; ;pic16f887_legacy.h: 499: volatile bit C2RSEL @ ((unsigned)&CM2CON1*8)+4;
+"500
+[v _C1RSEL `Vb ~T0 @X0 1 e@2125 ]
+[; ;pic16f887_legacy.h: 500: volatile bit C1RSEL @ ((unsigned)&CM2CON1*8)+5;
+"501
+[v _MC2OUT `Vb ~T0 @X0 1 e@2126 ]
+[; ;pic16f887_legacy.h: 501: volatile bit MC2OUT @ ((unsigned)&CM2CON1*8)+6;
+"502
+[v _MC1OUT `Vb ~T0 @X0 1 e@2127 ]
+[; ;pic16f887_legacy.h: 502: volatile bit MC1OUT @ ((unsigned)&CM2CON1*8)+7;
+"505
+[v _FVREN `Vb ~T0 @X0 1 e@3112 ]
+[; ;pic16f887_legacy.h: 505: volatile bit FVREN @ ((unsigned)&SRCON*8)+0;
+"506
+[v _PULSR `Vb ~T0 @X0 1 e@3114 ]
+[; ;pic16f887_legacy.h: 506: volatile bit PULSR @ ((unsigned)&SRCON*8)+2;
+"507
+[v _PULSS `Vb ~T0 @X0 1 e@3115 ]
+[; ;pic16f887_legacy.h: 507: volatile bit PULSS @ ((unsigned)&SRCON*8)+3;
+"508
+[v _C2REN `Vb ~T0 @X0 1 e@3116 ]
+[; ;pic16f887_legacy.h: 508: volatile bit C2REN @ ((unsigned)&SRCON*8)+4;
+"509
+[v _C1SEN `Vb ~T0 @X0 1 e@3117 ]
+[; ;pic16f887_legacy.h: 509: volatile bit C1SEN @ ((unsigned)&SRCON*8)+5;
+"510
+[v _SR0 `Vb ~T0 @X0 1 e@3118 ]
+[; ;pic16f887_legacy.h: 510: volatile bit SR0 @ ((unsigned)&SRCON*8)+6;
+"511
+[v _SR1 `Vb ~T0 @X0 1 e@3119 ]
+[; ;pic16f887_legacy.h: 511: volatile bit SR1 @ ((unsigned)&SRCON*8)+7;
+"514
+[v _ABDEN `Vb ~T0 @X0 1 e@3128 ]
+[; ;pic16f887_legacy.h: 514: volatile bit ABDEN @ ((unsigned)&BAUDCTL*8)+0;
+"515
+[v _WUE `Vb ~T0 @X0 1 e@3129 ]
+[; ;pic16f887_legacy.h: 515: volatile bit WUE @ ((unsigned)&BAUDCTL*8)+1;
+"516
+[v _BRG16 `Vb ~T0 @X0 1 e@3131 ]
+[; ;pic16f887_legacy.h: 516: volatile bit BRG16 @ ((unsigned)&BAUDCTL*8)+3;
+"517
+[v _SCKP `Vb ~T0 @X0 1 e@3132 ]
+[; ;pic16f887_legacy.h: 517: volatile bit SCKP @ ((unsigned)&BAUDCTL*8)+4;
+"518
+[v _RCIDL `Vb ~T0 @X0 1 e@3134 ]
+[; ;pic16f887_legacy.h: 518: volatile bit RCIDL @ ((unsigned)&BAUDCTL*8)+6;
+"519
+[v _ABDOVF `Vb ~T0 @X0 1 e@3135 ]
+[; ;pic16f887_legacy.h: 519: volatile bit ABDOVF @ ((unsigned)&BAUDCTL*8)+7;
+"522
+[v _ANS0 `Vb ~T0 @X0 1 e@3136 ]
+[; ;pic16f887_legacy.h: 522: volatile bit ANS0 @ ((unsigned)&ANSEL*8)+0;
+"523
+[v _ANS1 `Vb ~T0 @X0 1 e@3137 ]
+[; ;pic16f887_legacy.h: 523: volatile bit ANS1 @ ((unsigned)&ANSEL*8)+1;
+"524
+[v _ANS2 `Vb ~T0 @X0 1 e@3138 ]
+[; ;pic16f887_legacy.h: 524: volatile bit ANS2 @ ((unsigned)&ANSEL*8)+2;
+"525
+[v _ANS3 `Vb ~T0 @X0 1 e@3139 ]
+[; ;pic16f887_legacy.h: 525: volatile bit ANS3 @ ((unsigned)&ANSEL*8)+3;
+"526
+[v _ANS4 `Vb ~T0 @X0 1 e@3140 ]
+[; ;pic16f887_legacy.h: 526: volatile bit ANS4 @ ((unsigned)&ANSEL*8)+4;
+"528
+[v _ANS5 `Vb ~T0 @X0 1 e@3141 ]
+[; ;pic16f887_legacy.h: 528: volatile bit ANS5 @ ((unsigned)&ANSEL*8)+5;
+"529
+[v _ANS6 `Vb ~T0 @X0 1 e@3142 ]
+[; ;pic16f887_legacy.h: 529: volatile bit ANS6 @ ((unsigned)&ANSEL*8)+6;
+"530
+[v _ANS7 `Vb ~T0 @X0 1 e@3143 ]
+[; ;pic16f887_legacy.h: 530: volatile bit ANS7 @ ((unsigned)&ANSEL*8)+7;
+"534
+[v _ANS8 `Vb ~T0 @X0 1 e@3144 ]
+[; ;pic16f887_legacy.h: 534: volatile bit ANS8 @ ((unsigned)&ANSELH*8)+0;
+"535
+[v _ANS9 `Vb ~T0 @X0 1 e@3145 ]
+[; ;pic16f887_legacy.h: 535: volatile bit ANS9 @ ((unsigned)&ANSELH*8)+1;
+"536
+[v _ANS10 `Vb ~T0 @X0 1 e@3146 ]
+[; ;pic16f887_legacy.h: 536: volatile bit ANS10 @ ((unsigned)&ANSELH*8)+2;
+"537
+[v _ANS11 `Vb ~T0 @X0 1 e@3147 ]
+[; ;pic16f887_legacy.h: 537: volatile bit ANS11 @ ((unsigned)&ANSELH*8)+3;
+"538
+[v _ANS12 `Vb ~T0 @X0 1 e@3148 ]
+[; ;pic16f887_legacy.h: 538: volatile bit ANS12 @ ((unsigned)&ANSELH*8)+4;
+"539
+[v _ANS13 `Vb ~T0 @X0 1 e@3149 ]
+[; ;pic16f887_legacy.h: 539: volatile bit ANS13 @ ((unsigned)&ANSELH*8)+5;
+"542
+[v _RD `Vb ~T0 @X0 1 e@3168 ]
+[; ;pic16f887_legacy.h: 542: volatile bit RD @ ((unsigned)&EECON1*8)+0;
+"543
+[v _WR `Vb ~T0 @X0 1 e@3169 ]
+[; ;pic16f887_legacy.h: 543: volatile bit WR @ ((unsigned)&EECON1*8)+1;
+"544
+[v _WREN `Vb ~T0 @X0 1 e@3170 ]
+[; ;pic16f887_legacy.h: 544: volatile bit WREN @ ((unsigned)&EECON1*8)+2;
+"545
+[v _WRERR `Vb ~T0 @X0 1 e@3171 ]
+[; ;pic16f887_legacy.h: 545: volatile bit WRERR @ ((unsigned)&EECON1*8)+3;
+"546
+[v _EEPGD `Vb ~T0 @X0 1 e@3175 ]
+[; ;pic16f887_legacy.h: 546: volatile bit EEPGD @ ((unsigned)&EECON1*8)+7;
+[; ;pic.h: 28: extern void __nop(void);
+[; ;pic.h: 76: extern unsigned int flash_read(unsigned short addr);
+[; ;eeprom_routines.h: 41: extern void eeprom_write(unsigned char addr, unsigned char value);
+[; ;eeprom_routines.h: 42: extern unsigned char eeprom_read(unsigned char addr);
+[; ;eeprom_routines.h: 43: extern void eecpymem(volatile unsigned char *to, __eeprom unsigned char *from, unsigned char size);
+[; ;eeprom_routines.h: 44: extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsigned char size);
+[; ;pic.h: 150: extern __nonreentrant void _delay(unsigned long);
+[; ;pic.h: 184: extern unsigned char __resetbits;
+[; ;pic.h: 185: extern __bit __powerdown;
+[; ;pic.h: 186: extern __bit __timeout;
+[; ;lcd.h: 8: extern void lcd_write(unsigned char);
+[; ;lcd.h: 12: extern void lcd_clear(void);
+[; ;lcd.h: 16: extern void lcd_puts(const char * s);
+[; ;lcd.h: 20: extern void lcd_goto(unsigned char pos);
+[; ;lcd.h: 24: extern void lcd_init(void);
+[; ;lcd.h: 28: extern void lcd_putch(char);
+[; ;lcd.c: 20: void pause( unsigned short usvalue );
+"33 lcd.c
+[v _lcd_write `(v ~T0 @X0 1 ef1`uc ]
+"34
+{
+[; ;lcd.c: 32: void
+[; ;lcd.c: 33: lcd_write(unsigned char c)
+[; ;lcd.c: 34: {
+[e :U _lcd_write ]
+"33
+[v _c `uc ~T0 @X0 1 r1 ]
+"34
+[f ]
+[; ;lcd.c: 35: pause (1);
+"35
+[e ( _pause (1 -> -> 1 `i `us ]
+[; ;lcd.c: 36: PORTC = ( ( c >> 4 ) & 0x0F );
+"36
+[e = _PORTC -> & >> -> _c `i -> 4 `i -> 15 `i `uc ]
+[; ;lcd.c: 37: ((RA1 = 1),(RA1=0));
+"37
+[e ; -> = _RA1 -> -> 1 `i `b `i -> = _RA1 -> -> 0 `i `b `i ]
+[; ;lcd.c: 38: PORTC = ( c & 0x0F );
+"38
+[e = _PORTC -> & -> _c `i -> 15 `i `uc ]
+[; ;lcd.c: 39: ((RA1 = 1),(RA1=0));
+"39
+[e ; -> = _RA1 -> -> 1 `i `b `i -> = _RA1 -> -> 0 `i `b `i ]
+[; ;lcd.c: 41: }
+"41
+[e :UE 1 ]
+}
+"48
+[v _lcd_clear `(v ~T0 @X0 1 ef ]
+"49
+{
+[; ;lcd.c: 47: void
+[; ;lcd.c: 48: lcd_clear(void)
+[; ;lcd.c: 49: {
+[e :U _lcd_clear ]
+[f ]
+[; ;lcd.c: 50: RA2 = 0;
+"50
+[e = _RA2 -> -> 0 `i `b ]
+[; ;lcd.c: 51: lcd_write(0x1);
+"51
+[e ( _lcd_write (1 -> -> 1 `i `uc ]
+[; ;lcd.c: 52: pause (2);
+"52
+[e ( _pause (1 -> -> 2 `i `us ]
+[; ;lcd.c: 53: }
+"53
+[e :UE 2 ]
+}
+"58
+[v _lcd_puts `(v ~T0 @X0 1 ef1`*Cuc ]
+"59
+{
+[; ;lcd.c: 57: void
+[; ;lcd.c: 58: lcd_puts(const char * s)
+[; ;lcd.c: 59: {
+[e :U _lcd_puts ]
+"58
+[v _s `*Cuc ~T0 @X0 1 r1 ]
+"59
+[f ]
+[; ;lcd.c: 60: RA2 = 1;
+"60
+[e = _RA2 -> -> 1 `i `b ]
+[; ;lcd.c: 61: while(*s)
+"61
+[e $U 4  ]
+[e :U 5 ]
+[; ;lcd.c: 62: lcd_write(*s++);
+"62
+[e ( _lcd_write (1 *U ++ _s * -> -> 1 `i `x -> -> # *U _s `i `x ]
+[e :U 4 ]
+"61
+[e $ != -> *U _s `i -> -> -> 0 `i `Cuc `i 5  ]
+[e :U 6 ]
+[; ;lcd.c: 63: }
+"63
+[e :UE 3 ]
+}
+"68
+[v _lcd_putch `(v ~T0 @X0 1 ef1`uc ]
+"69
+{
+[; ;lcd.c: 67: void
+[; ;lcd.c: 68: lcd_putch(char c)
+[; ;lcd.c: 69: {
+[e :U _lcd_putch ]
+"68
+[v _c `uc ~T0 @X0 1 r1 ]
+"69
+[f ]
+[; ;lcd.c: 70: RA2 = 1;
+"70
+[e = _RA2 -> -> 1 `i `b ]
+[; ;lcd.c: 71: lcd_write( c );
+"71
+[e ( _lcd_write (1 _c ]
+[; ;lcd.c: 72: }
+"72
+[e :UE 7 ]
+}
+"80
+[v _lcd_goto `(v ~T0 @X0 1 ef1`uc ]
+"81
+{
+[; ;lcd.c: 79: void
+[; ;lcd.c: 80: lcd_goto(unsigned char pos)
+[; ;lcd.c: 81: {
+[e :U _lcd_goto ]
+"80
+[v _pos `uc ~T0 @X0 1 r1 ]
+"81
+[f ]
+[; ;lcd.c: 82: RA2 = 0;
+"82
+[e = _RA2 -> -> 0 `i `b ]
+[; ;lcd.c: 83: lcd_write(pos);
+"83
+[e ( _lcd_write (1 _pos ]
+[; ;lcd.c: 84: }
+"84
+[e :UE 8 ]
+}
+"88
+[v _lcd_init `(v ~T0 @X0 1 ef ]
+"89
+{
+[; ;lcd.c: 87: void
+[; ;lcd.c: 88: lcd_init()
+[; ;lcd.c: 89: {
+[e :U _lcd_init ]
+[f ]
+"90
+[v _init_value `uc ~T0 @X0 1 a ]
+[; ;lcd.c: 90: char init_value;
+[; ;lcd.c: 94: init_value = 0x3;
+"94
+[e = _init_value -> -> 3 `i `uc ]
+[; ;lcd.c: 95: TRISA=0;
+"95
+[e = _TRISA -> -> 0 `i `uc ]
+[; ;lcd.c: 96: TRISC=0;
+"96
+[e = _TRISC -> -> 0 `i `uc ]
+[; ;lcd.c: 97: RA2 = 0;
+"97
+[e = _RA2 -> -> 0 `i `b ]
+[; ;lcd.c: 98: RA1 = 0;
+"98
+[e = _RA1 -> -> 0 `i `b ]
+[; ;lcd.c: 99: RA4 = 0;
+"99
+[e = _RA4 -> -> 0 `i `b ]
+[; ;lcd.c: 101: pause (15);
+"101
+[e ( _pause (1 -> -> 15 `i `us ]
+[; ;lcd.c: 102: PORTC = init_value;
+"102
+[e = _PORTC _init_value ]
+[; ;lcd.c: 103: ((RA1 = 1),(RA1=0));
+"103
+[e ; -> = _RA1 -> -> 1 `i `b `i -> = _RA1 -> -> 0 `i `b `i ]
+[; ;lcd.c: 104: pause(10);
+"104
+[e ( _pause (1 -> -> 10 `i `us ]
+[; ;lcd.c: 105: ((RA1 = 1),(RA1=0));
+"105
+[e ; -> = _RA1 -> -> 1 `i `b `i -> = _RA1 -> -> 0 `i `b `i ]
+[; ;lcd.c: 106: pause(10);
+"106
+[e ( _pause (1 -> -> 10 `i `us ]
+[; ;lcd.c: 107: ((RA1 = 1),(RA1=0));
+"107
+[e ; -> = _RA1 -> -> 1 `i `b `i -> = _RA1 -> -> 0 `i `b `i ]
+[; ;lcd.c: 108: pause(10);
+"108
+[e ( _pause (1 -> -> 10 `i `us ]
+[; ;lcd.c: 109: PORTC = 2;
+"109
+[e = _PORTC -> -> 2 `i `uc ]
+[; ;lcd.c: 110: ((RA1 = 1),(RA1=0));
+"110
+[e ; -> = _RA1 -> -> 1 `i `b `i -> = _RA1 -> -> 0 `i `b `i ]
+[; ;lcd.c: 112: lcd_write(0x28);
+"112
+[e ( _lcd_write (1 -> -> 40 `i `uc ]
+[; ;lcd.c: 114: lcd_write(0xF);
+"114
+[e ( _lcd_write (1 -> -> 15 `i `uc ]
+[; ;lcd.c: 115: lcd_clear();
+"115
+[e ( _lcd_clear ..  ]
+[; ;lcd.c: 116: lcd_write(0x6);
+"116
+[e ( _lcd_write (1 -> -> 6 `i `uc ]
+[; ;lcd.c: 117: }
+"117
+[e :UE 9 ]
+}
